@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
-<template></template>
+<template>
+  <div>대시보드</div>
+</template>
 
 <style></style>
