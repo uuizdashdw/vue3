@@ -1,15 +1,17 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import './style.css';
 
-import { createPinia } from 'pinia'
-import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query'
-// import router from './router'
+import './assets/style.css';
+import App from './App.vue';
 
-const app = createApp(App)
+import { createPinia } from 'pinia';
+import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query';
+import router from './router';
 
-const pinia = createPinia()
-app.use(pinia)
+const app = createApp(App);
+
+const pinia = createPinia();
+app.use(pinia);
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,9 +21,9 @@ const queryClient = new QueryClient({
       staleTime: 1000 * 60 * 1, // 1분 캐싱
     },
   },
-})
-app.use(VueQueryPlugin, { queryClient })
+});
+app.use(VueQueryPlugin, { queryClient });
 
-// app.use(router)
+app.use(router);
 
-app.mount('#app')
+app.mount('#app');

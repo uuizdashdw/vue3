@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -18,12 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'vue',
-    'import',
-    'unused-imports',
-    'prettier',
-  ],
+  plugins: ['vue', 'import', 'unused-imports', 'prettier'],
   rules: {
     /* --- 💅 Prettier --- */
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
@@ -32,6 +27,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'no-console': 'warn',
     'no-debugger': 'warn',
+    'vue/html-quotes': ['error', 'single'],
 
     /* --- 🧹 불필요한 import 자동 감지 --- */
     'unused-imports/no-unused-imports': 'error',
@@ -44,14 +40,9 @@ module.exports = {
     'import/order': [
       'warn',
       {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          ['parent', 'sibling', 'index'],
-        ],
+        groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index']],
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
   },
-}
+};
